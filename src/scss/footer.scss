@@ -1,0 +1,238 @@
+//====================================================================================
+//====================================================================================
+.footer {
+	background: #222220;
+	@include adaptiveValue("padding-top", 92, 20);
+	color: $pageColor;
+	// .footer__container
+	&__container {
+		@media (max-width: $tablet) {
+			padding: toRem(0) toRem(10);
+		}
+	}
+	// .footer__inner
+	&__inner {
+		gap: toRem(32);
+		@include adaptiveValue("gap", 32, 40);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@media (max-width: $tablet) {
+			grid-template-columns: auto;
+		}
+	}
+	// .footer__sitemap
+	&__sitemap {
+		@media (max-width: $tablet) {
+			justify-content: center;
+			margin: 0 auto;
+		}
+	}
+	// .footer__logo
+	&__logo {
+		display: flex;
+		justify-content: center;
+		padding-top: toRem(20);
+	}
+	// .footer__image-ibg
+	&__image {
+		height: toRem(103);
+		width: toRem(287);
+		position: relative;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+	// .footer__subscribe
+	&__subscribe {
+		display: flex;
+		justify-content: end;
+		@media (max-width: $tablet) {
+			justify-content: center;
+			margin: 0 auto;
+			// width: 100%;
+			// flex-grow: 1;
+		}
+	}
+	// .footer__form
+	&__form {
+	}
+	// .footer__copyright
+	&__copyright {
+		text-align: center;
+		@include adaptiveValue("padding-top", 42, 20);
+		@include adaptiveValue("padding-bottom", 35, 18);
+	}
+	// .footer__text
+	&__text {
+		line-height: 187.5%; /* 30/16 */
+	}
+}
+
+.sitemap {
+	@media (max-width: $tablet) {
+		text-align: center;
+	}
+	// .sitemap__body
+	&__body {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 39, 20);
+		}
+	}
+	// .sitemap__title
+	&__title {
+		font-family: "Italiana";
+		font-size: toRem(20);
+		text-transform: capitalize;
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	// .sitemap__list
+	&__list {
+		display: flex;
+		gap: toRem(40);
+		@include adaptiveValue("gap", 40, 25, 1, 1920, 992);
+		@include adaptiveValue("gap", 40, 20, 0, 992, 320);
+	}
+	// .sitemap__item
+	&__item {
+		// красивое подчеркивание при hover
+		text-align: center;
+	}
+	// .sitemap__link
+	&__link {
+		font-weight: 300;
+		line-height: 156.25%; /* 25/16 */
+		// красивое подчеркивание при hover
+		display: inline-block;
+		// padding-bottom: toRem(1);
+		position: relative;
+		&::after {
+			position: absolute;
+			content: "";
+			height: toRem(1);
+			background-color: $pageColor;
+
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			transition: all 0.3s;
+		}
+		&:hover::after {
+			left: 0;
+			width: 100%;
+		}
+	}
+	// .sitemap__socials
+	&__socials {
+		display: flex;
+		column-gap: toRem(41);
+		@media (max-width: $tablet) {
+			justify-content: center;
+		}
+	}
+	// .sitemap__icon
+	&__icon {
+		transition: opacity 0.3s;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.subscribe {
+	// .subscribe__content
+	&__content {
+		max-width: toRem(384);
+		@media (max-width: $tablet) {
+			max-width: 100%;
+		}
+	}
+	// .subscribe__title
+	&__title {
+		font-family: "Italiana";
+		font-size: toRem(32);
+		text-transform: capitalize;
+		line-height: 1.15;
+		max-width: toRem(367);
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+		@media (max-width: $tablet) {
+			max-width: 100%;
+			text-align: center;
+			&:not(:last-child) {
+				margin-bottom: toRem(30);
+			}
+		}
+	}
+	// .subscribe__form
+	&__form {
+		display: flex;
+		width: 100%;
+		@media (max-width: em(384)) {
+			width: 100%;
+		}
+		@media (max-width: $tablet) {
+			margin: 0 auto;
+		}
+	}
+}
+
+.form {
+	max-width: toRem(335);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: toRem(14);
+	border-bottom: 1px solid $pageColor;
+	position: relative;
+	@media (max-width: $tablet) {
+		max-width: toRem(400);
+		margin: 0 auto;
+	}
+	// .form__input
+	&__input {
+		height: toRem(36);
+		color: $pageColor;
+		flex: 1 1 auto;
+		font-weight: 500;
+		background-color: transparent;
+
+		&::placeholder {
+			color: $pageColor;
+		}
+		&._form-focus {
+			border: 1px solid $pageColor;
+			outline: $pageColor;
+			padding-left: toRem(15);
+		}
+		&._form-error {
+			color: red;
+			&::placeholder {
+				color: red;
+			}
+		}
+	}
+	// .form__button
+	&__button {
+		padding: toRem(8.56) toRem(11.5);
+		line-height: 187.5%; /* 30/16 */
+	}
+	&__error {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		color: red;
+		font-size: toRem(20);
+		font-weight: 500;
+		letter-spacing: toRem(1.2);
+		margin-top: toRem(10);
+		padding-left: toRem(26);
+	}
+}

@@ -1,0 +1,9 @@
+.hero__title {
+  padding-top: toRem(50);
+  padding-bottom: toRem(30);
+  font-size: toRem(50);
+  font-weight: 900;
+  color: red;
+  background: #adf690;
+  text-align: center;
+}
