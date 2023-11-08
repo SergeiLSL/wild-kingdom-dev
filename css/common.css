@@ -1,0 +1,13 @@
+.none {
+  display: none !important;
+}
+
+.title {
+  font-family: "Italiana";
+  font-size: toRem(48);
+  text-transform: capitalize;
+}
+
+.text {
+  line-height: 156.25%; /* 25/16 */
+}

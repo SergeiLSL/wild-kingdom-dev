@@ -1,1 +1,40 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.none {
+	display: none !important;
+}
+
+.button {
+	display: inline-flex;
+	font-weight: 300;
+	line-height: 156.25%; /* 25/16 */
+	font-feature-settings:
+		"clig" off,
+		"liga" off;
+	padding: toRem(12) toRem(30);
+	border-radius: toRem(50);
+	// mix-blend-mode: soft-light;
+	transition: all 0.3s ease;
+	background:
+		url("@img/about/btn-bg.png"),
+		lightgray 50% / cover no-repeat;
+	@media (any-hover: hover) {
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+	&--fw {
+		width: 100%;
+	}
+}
+
+.title {
+	font-family: "Italiana";
+	color: $titleColor;
+	font-size: toRem(48);
+	text-transform: capitalize;
+	line-height: 118.75%; /* 57/48 */
+}
+
+.text {
+	line-height: 169.5%; /* 30/16 */
+}

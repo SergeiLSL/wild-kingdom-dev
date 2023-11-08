@@ -4,6 +4,32 @@
   font-size: toRem(50);
   font-weight: 900;
   color: red;
-  background: #adf690;
   text-align: center;
+}
+
+.about__subtitle {
+  line-height: 156.25%; /* 25/16 */
+  text-transform: capitalize;
+  -webkit-font-feature-settings: "clig" off, "liga" off;
+          font-feature-settings: "clig" off, "liga" off;
+}
+.about__pet-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.about__image {
+  width: toRem(140);
+  height: toRem(140);
+  background: #000;
+}
+.about__name {
+  font-family: "Italiana";
+  font-size: toRem(24);
+  text-transform: capitalize;
+  -webkit-font-feature-settings: "clig" off, "liga" off;
+          font-feature-settings: "clig" off, "liga" off;
 }
