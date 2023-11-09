@@ -13,7 +13,10 @@
 	// .footer__inner
 	&__inner {
 		gap: toRem(32);
-		@include adaptiveValue("gap", 32, 40);
+		@include adaptiveValue("gap", 32, 15, 1, 1920, 992);
+		row-gap: 0;
+		@include adaptiveValue("padding-bottom", 54, 30);
+		border-bottom: toRem(1) solid $pageColor;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		@media (max-width: $tablet) {
@@ -31,13 +34,21 @@
 	&__logo {
 		display: flex;
 		justify-content: center;
+		padding: toRem(0) toRem(10);
 		padding-top: toRem(20);
+		border-left: toRem(1) solid $pageColor;
+		border-right: toRem(1) solid $pageColor;
+		padding-bottom: toRem(28);
+		@media (max-width:$tablet){
+			border: none;
+		}
 	}
 	// .footer__image-ibg
 	&__image {
 		height: toRem(103);
 		width: toRem(287);
 		position: relative;
+		margin-bottom: toRem(20);
 		img {
 			position: absolute;
 			width: 100%;
@@ -54,8 +65,6 @@
 		@media (max-width: $tablet) {
 			justify-content: center;
 			margin: 0 auto;
-			// width: 100%;
-			// flex-grow: 1;
 		}
 	}
 	// .footer__form
@@ -76,6 +85,7 @@
 .sitemap {
 	@media (max-width: $tablet) {
 		text-align: center;
+		margin-bottom: toRem(30);
 	}
 	// .sitemap__body
 	&__body {
@@ -95,8 +105,10 @@
 	// .sitemap__list
 	&__list {
 		display: flex;
-		gap: toRem(40);
-		@include adaptiveValue("gap", 40, 25, 1, 1920, 992);
+		max-width: toRem(370);
+		justify-content: space-between;
+		// column-gap: toRem(70);
+		// @include adaptiveValue("gap", 40, 20, 0, 1920, 992);
 		@include adaptiveValue("gap", 40, 20, 0, 992, 320);
 	}
 	// .sitemap__item
@@ -148,7 +160,8 @@
 .subscribe {
 	// .subscribe__content
 	&__content {
-		max-width: toRem(384);
+		// max-width: toRem(384);
+
 		@media (max-width: $tablet) {
 			max-width: 100%;
 		}
@@ -157,6 +170,7 @@
 	&__title {
 		font-family: "Italiana";
 		font-size: toRem(32);
+		@include adaptiveValue("font-size", 32, 30, 1, 1920, 992);
 		text-transform: capitalize;
 		line-height: 1.15;
 		max-width: toRem(367);
