@@ -115,18 +115,12 @@
 		max-width: toRem(1240);
 		display: flex;
 		margin: 0 auto;
-		// justify-content: space-evenly;
-		// justify-content: space-around;
 		justify-content: space-between;
 		@media (max-width: $mobileSmall) {
 			flex-wrap: wrap;
 			gap: toRem(30);
 			justify-content: center;
 		}
-
-		// display: grid;
-		// grid-template-columns: repeat(3, 1fr);
-		// justify-items: center;
 	}
 	// .about__pet-column
 	&__pet-column {
@@ -150,25 +144,14 @@
 	&__image {
 		left: 0;
 		right: 0;
-		// width: toRem(140);
 		@include adaptiveValue("width", 140, 90);
-		// height: toRem(140);
 		@include adaptiveValue("height", 140, 90);
 		border-radius: 50%;
 		background: $pageColor;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		// &:not(:last-child) {
-		// 	@include adaptiveValue("margin-bottom", 29, 15);
-		// }
-		@media (max-width: $mobile) {
-			// width: toRem(100);
-			// height: toRem(100);
-		}
 		img {
-			// width: toRem(80);
-			// height: toRem(67);
 			@include adaptiveValue("width", 87, 53);
 			@include adaptiveValue("height", 60, 40);
 			max-width: 100%;
