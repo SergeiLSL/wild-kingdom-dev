@@ -27,14 +27,55 @@
 	}
 }
 
-.title {
-	font-family: "Italiana";
-	color: $titleColor;
-	font-size: toRem(48);
-	text-transform: capitalize;
-	line-height: 118.75%; /* 57/48 */
-}
+// .subtitle {
+// 	line-height: 156.25%; /* 25/16 */
+// 	text-transform: capitalize;
+// 	line-height: 156.25%; /* 25/16 */
+// 	text-transform: capitalize;
+// 	font-feature-settings:
+// 		"clig" off,
+// 		"liga" off;
+// }
 
-.text {
-	line-height: 169.5%; /* 30/16 */
+// .title {
+// 	font-family: "Italiana";
+// 	color: $titleColor;
+// 	font-size: toRem(48);
+// 	text-transform: capitalize;
+// 	line-height: 118.75%; /* 57/48 */
+// }
+
+// .text {
+// 	line-height: 169.5%; /* 30/16 */
+// }
+
+.block-header {
+	display: grid;
+	@include adaptiveValue("gap", 20, 15);
+	// .block-header--center
+	&--center {
+		text-align: center;
+	}
+	// .block-header__subtitle
+	&__subtitle {
+		line-height: 156.25%; /* 25/16 */
+		text-transform: capitalize;
+		line-height: 156.25%; /* 25/16 */
+		text-transform: capitalize;
+		font-feature-settings:
+			"clig" off,
+			"liga" off;
+	}
+	// .block-header__title
+	&__title {
+		font-family: "Italiana";
+		color: $titleColor;
+		font-size: toRem(48);
+		text-transform: capitalize;
+		line-height: 118.75%; /* 57/48 */
+	}
+	// .block-header__text
+	&__text {		
+		line-height: 169.5%; /* 30/16 */
+	}
 }
